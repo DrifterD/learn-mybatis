@@ -9,8 +9,6 @@
 
 package sql;
 
-import org.testng.annotations.Test;
-
 /**
  * 〈一句话功能简述〉<br>
  * 〈功能详细描述〉
@@ -21,10 +19,10 @@ import org.testng.annotations.Test;
  */
 public class CallRecordMapperTest extends BaseTestMapper {
 
-    @Test
-    public void testSelectAll() {
-
-        CallRecordMapper callRecordMapper = this.sqlSessionFactory.openSession().getMapper(CallRecordMapper.class);
-        System.out.println(callRecordMapper.selectAll());
-    }
+//    @Test
+//    public void testSelectAll() {
+//
+//        CallRecordMapper callRecordMapper = this.sqlSessionFactory.openSession().getMapper(CallRecordMapper.class);
+//        System.out.println(callRecordMapper.selectAll());
+//    }
 }

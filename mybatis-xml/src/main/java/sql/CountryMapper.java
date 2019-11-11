@@ -3,7 +3,7 @@
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  * FileName: CountryMapper.java
  * Author:   bigmoon
- * Date:     19-9-20 上午1:10
+ * Date:     19-11-12 上午1:40
  * Description: mybatis-learning
  */
 
@@ -24,7 +24,7 @@ import java.util.List;
  */
 public interface CountryMapper {
 
-    List<Country> selectAll(@Param("countryname")String countryname);
+    List<Country> selectAll(@Param("countryname") String countryname);
 
     int insertCountry(Country country);
 

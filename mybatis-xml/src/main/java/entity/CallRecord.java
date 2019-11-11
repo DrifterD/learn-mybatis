@@ -9,6 +9,9 @@
 
 package entity;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -20,12 +23,19 @@ import java.util.Date;
  * @see [相关类/方法]（可选）
  * @since 20191030
  */
+@Table(name="call_records")
 public class CallRecord {
 
+    @Id
+    @Column(name="id")
     private Integer id;
+    @Column(name="collectionOperator")
     private String collectionOperator;
+    @Column(name="callDuration")
     private BigDecimal callDuration;
+    @Column(name="date")
     private Date date;
+    @Column(name="callCount")
     private Integer callCount;
 
     public Integer getId() {

@@ -3,11 +3,11 @@
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  * FileName: CountryStatusTypeHandler.java
  * Author:   bigmoon
- * Date:     19-9-20 上午2:24
+ * Date:     19-11-12 上午1:40
  * Description: mybatis-learning
  */
 
-package type.handler;
+package handler;
 
 import entity.CountryStatusEnum;
 import org.apache.ibatis.type.JdbcType;

@@ -16,7 +16,7 @@
 <mapper namespace="sql.CallRecordMapper">
     <!--id为sql语句的id，parameterType为参数类型，resultType为结果类型，#{}为占位符-->
     <!--根据id查找用户，#{}里面可以随便写-->
-    <select id="selectAll" resultType="Country">
-        select * from call_records
-    </select>
+    <!--<select id="selectAll" resultType="Country">-->
+        <!--select * from call_records-->
+    <!--</select>-->
 </mapper>

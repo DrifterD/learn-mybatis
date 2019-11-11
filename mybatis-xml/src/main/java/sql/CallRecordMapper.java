@@ -10,8 +10,7 @@
 package sql;
 
 import entity.CallRecord;
-
-import java.util.List;
+import tk.mybatis.mapper.common.Mapper;
 
 /**
  * 〈一句话功能简述〉<br>
@@ -21,7 +20,7 @@ import java.util.List;
  * @see [相关类/方法]（可选）
  * @since 20191030
  */
-public interface CallRecordMapper {
+public interface CallRecordMapper extends Mapper<CallRecord> {
 
-    List<CallRecord> selectAll();
+//    List<CallRecord> selectAll();
 }
