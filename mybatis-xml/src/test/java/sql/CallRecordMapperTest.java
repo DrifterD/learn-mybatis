@@ -9,6 +9,7 @@
 
 package sql;
 
+import org.apache.ibatis.session.SqlSession;
 import org.testng.annotations.Test;
 
 /**
@@ -24,7 +25,19 @@ public class CallRecordMapperTest extends BaseTestMapper {
     @Test
     public void testSelectAll() {
 
-        CallRecordMapper callRecordMapper = this.sqlSessionFactory.openSession().getMapper(CallRecordMapper.class);
-        System.out.println(callRecordMapper.selectAll());
+        SqlSession session=this.sqlSessionFactory.openSession();
+        CallRecordMapper callRecordMapper = session.getMapper(CallRecordMapper.class);
+        System.out.println("第一次："+callRecordMapper.selectAll());
+    }
+
+    @Test
+    public void testSelectAllWithCache() {
+
+        SqlSession session=this.sqlSessionFactory.openSession();
+        CallRecordMapper callRecordMapper = session.getMapper(CallRecordMapper.class);
+        System.out.println("第一次："+callRecordMapper.selectAll());
+        session.close();
+        SqlSession session2=this.sqlSessionFactory.openSession();
+        System.out.println("第一次："+session2.getMapper(CallRecordMapper.class).selectAll());
     }
 }
