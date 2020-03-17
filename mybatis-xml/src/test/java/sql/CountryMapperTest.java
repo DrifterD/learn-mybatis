@@ -20,10 +20,6 @@ import java.util.List;
 /**
  * 〈一句话功能简述〉<br>
  * 〈功能详细描述〉
- *
- * @author 17081794
- * @see [相关类/方法]（可选）
- * @since 20191030
  */
 public class CountryMapperTest extends BaseTestMapper {
 
@@ -56,6 +52,8 @@ public class CountryMapperTest extends BaseTestMapper {
         country.setCountryname("日本");
         int effectRows = countryMapper.insertCountry(country);
         System.out.println("insert rows:" + effectRows);
+        sqlSession.commit();
+        sqlSession.close();
     }
 
     @Test

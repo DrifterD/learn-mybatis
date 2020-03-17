@@ -9,16 +9,15 @@
 
 package entity;
 
+import java.io.Serializable;
+
 /**
  * 〈一句话功能简述〉<br>
  * 〈功能详细描述〉
- *
- * @author 17081794
- * @see [相关类/方法]（可选）
- * @since 20191030
  */
-public class Country {
+public class Country implements Serializable {
 
+    private static final long serialVersionUID = 5684150569837207784L;
     private Integer id;
 
     private String countryname;

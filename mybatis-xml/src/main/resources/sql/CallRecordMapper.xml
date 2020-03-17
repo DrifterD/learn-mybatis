@@ -14,11 +14,16 @@
 
 <!-- namespace：命名空间，用于隔离sql，还有一个很重要的作用，后面会讲 -->
 <mapper namespace="sql.CallRecordMapper">
-    <cache readOnly="true" eviction="FIFO" size="10000"
+    <cache readOnly="false" eviction="FIFO" size="10000" type="org.mybatis.caches.redis.RedisCache"
     ></cache>
     <!--id为sql语句的id，parameterType为参数类型，resultType为结果类型，#{}为占位符-->
     <!--根据id查找用户，#{}里面可以随便写-->
-    <select id="selectAll" resultType="Country">
+    <select id="selectAll" resultType="CallRecord">
         select * from call_records
     </select>
+    
+    <update id="updateData">
+        update call_records set collectionOperator='asdsd' where id=1
+    </update>
+    
 </mapper>

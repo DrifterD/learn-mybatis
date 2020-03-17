@@ -12,30 +12,27 @@ package entity;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
 /**
  * 〈一句话功能简述〉<br>
  * 〈功能详细描述〉
- *
- * @author 17081794
- * @see [相关类/方法]（可选）
- * @since 20191030
  */
-@Table(name="call_records")
-public class CallRecord {
-
+@Table(name = "call_records")
+public class CallRecord implements Serializable {
+    private static final long serialVersionUID = 8388890212540425854L;
     @Id
-    @Column(name="id")
+    @Column(name = "id")
     private Integer id;
-    @Column(name="collectionOperator")
+    @Column(name = "collectionOperator")
     private String collectionOperator;
-    @Column(name="callDuration")
+    @Column(name = "callDuration")
     private BigDecimal callDuration;
-    @Column(name="date")
+    @Column(name = "date")
     private Date date;
-    @Column(name="callCount")
+    @Column(name = "callCount")
     private Integer callCount;
 
     public Integer getId() {

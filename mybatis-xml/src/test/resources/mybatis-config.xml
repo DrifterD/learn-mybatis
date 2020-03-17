@@ -14,6 +14,7 @@
 <configuration>
     <settings>
         <setting name="logImpl" value="LOG4J"/>
+        <setting name="cacheEnabled" value="true" />
     </settings>
     
     <typeAliases>
@@ -42,6 +43,9 @@
     
     <mappers>
         <!--<mapper resource="sql/CountryMapper.xml"></mapper>-->
+        <!--<mapper resource="sql/CallRecordMapper.xml"></mapper>-->
+        
+        <!--package 是定义mapper的基础包路径，不是文件路径名称-->
         <package name="sql"></package>
     </mappers>
 </configuration>
