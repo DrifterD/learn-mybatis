@@ -29,18 +29,18 @@ public class CallRecordMapperTest extends BaseTestMapper {
 
     @Test
     public void testSelectnageAllWithCache() {
-
-        SqlSession session=this.sqlSessionFactory.openSession();
-        CallRecordMapper callRecordMapper = session.getMapper(CallRecordMapper.class);
-        System.out.println("第一次："+callRecordMapper.selectAll());
-        session.close();
-        SqlSession session2=this.sqlSessionFactory.openSession();
-        System.out.println("第二次："+session2.getMapper(CallRecordMapper.class).selectAll());
-        session2.close();
-
-        SqlSession session3=this.sqlSessionFactory.openSession();
-        System.out.println("第三次："+session3.getMapper(CallRecordMapper.class).selectAll());
-        session3.close();
+//
+//        SqlSession session=this.sqlSessionFactory.openSession();
+//        CallRecordMapper callRecordMapper = session.getMapper(CallRecordMapper.class);
+//        System.out.println("第一次："+callRecordMapper.selectAll());
+//        session.close();
+//        SqlSession session2=this.sqlSessionFactory.openSession();
+//        System.out.println("第二次："+session2.getMapper(CallRecordMapper.class).selectAll());
+//        session2.close();
+//
+//        SqlSession session3=this.sqlSessionFactory.openSession();
+//        System.out.println("第三次："+session3.getMapper(CallRecordMapper.class).selectAll());
+//        session3.close();
     }
 
 
