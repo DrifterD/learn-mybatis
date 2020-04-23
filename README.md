@@ -81,12 +81,35 @@ Mybatis虽然提供插件接口和插件注解，这并不表示任何一个流�
 • Executor ( update 、 query 、 flushStatements 、 commit 、 rollback 、
 getTransaction 、 close 、 isClosed)
 
-##### ParameteHandler
-• ParameterHandler ( getParameterObj ect 、 setParameters)
+upate:该方法会在所有的 INSERT 、 UPDATE 、 DELETE 执行时被调用
+query:查询到时候被执行
+flushStatements:只有sqlSession调用flushStatement方法时或者调用带有`@flush`注解的方法才会被调用
+commit:sqlsession提交事务
+rollback：sqlsession回滚被执行
+getTransaction：获取事务
+close：关闭事务
+isCLosed：事务状态是关闭
 
-##### setHandler
-• Resul SetHandler ( handleResul tSets 、 handleCursorResultSe ts 、
+>Executor接口中更多入参的query是不可以被拦截器拦截（**还在探索中**）
+
+##### ParameteHandler
+• ParameterHandler ( getParameterObject 、 setParameters)
+
+getParameterObject:只有在执行存储过程出参的时候才会被执行
+setParameters:参数入参时被执行
+
+##### ResultSetHandler
+• ResulSetHandler ( handleResultSets 、 handleCursorResultSets 、
 handleOutputParameters)
+
+handleResultSets:查询结果集被执行
+handleCursorResultSets:
+handleOutputParameters:存储过程出参时被调用
 
 ##### StatementHandler
 • StatementHandler (prepare 、 parameterize 、 batch 、 update 、 query)
+
+prepare：该方法会在数据库执行所有之前完成
+parameterize:在执行`prepare`之后执行关于参数信息的
+batch:在全局设置配置 defaultExecutorType＝ ” BATCH ” 时，执行数据操作才会调用该方法
+query:在执行`select`时被执行
